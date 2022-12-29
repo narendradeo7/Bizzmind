@@ -1,0 +1,216 @@
+
+
+/* root color so that we can reuse it keep our site uniform 
+ */
+
+ :root{
+    --main-bg:rgb(255, 255, 255);;
+    --main-color:rgb(255, 123, 0);
+    --main-cement:rgb(129 123 123);
+
+ }
+
+
+ body {
+	background-color: #fff;
+	font-family: "poppins", sans-serif;
+	overflow: visible;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	position: relative;
+}
+
+ /* to make page responsive and 1 rem equal to 10 px  */
+
+ html{
+    font-size:62.5%;
+ }
+.row{
+   margin: 0;
+}
+
+
+
+
+
+
+/* style of navbar  */
+
+.nav_head{
+    background-color: var(--main-cement);
+
+
+    /* fixing navbar to top when it reaches o px from top  */
+    position: sticky;
+    top: -1px;
+    z-index: 700;
+    
+  }
+  /* background fo nav  */
+  .navbar{
+     color: rgb(255, 255, 255);
+     background-color: var(--main-cement);
+     text-shadow: 0px 2px 5px black;
+     
+  }
+  
+  /* anchor tags of nav  */
+
+  .navbar a{
+    color: white;
+    font-size: 1.8rem;
+    
+  }
+  .navbar a:hover{
+ color: var(--main-color) !important;
+ text-shadow: 1px 1px 1px black;
+ font-weight: 600;
+ }
+ /* targeting active navbar item  */
+
+ .navbar a.active {
+    color: var(--main-color)!important;
+    text-shadow: 2px 0px 1px black;
+}
+
+
+ .nav-item{
+    /* box-shadow: inset 0.1em 0.1em 0.7em #282727; */
+ }
+  .nav-brick{
+    width: 2.5em;
+    height: 2.5em;
+    background-image: url('https://www.svgrepo.com/show/147781/brick.svg');
+  }
+
+  /* giving spaces between li of nav element 
+   */
+  .navbar li {
+    margin-left:2rem;
+   }
+
+   .logoimg{
+      width: 43px;
+      margin-right: 5px;
+   }
+
+
+   /* syling of intro img  */
+
+.introimg{
+   display: flex;
+   display: flex;
+    justify-content: center;
+    position: relative;
+    /* bottom: 4%; */
+    top: -4%;
+    z-index: 5;
+}
+
+.thinkimg{
+   
+   width: 71%;
+   z-index: 5;
+}
+
+/* making and eyes div equal to viewport to make parent for eyes  */
+.eyes{
+   position: absolute;
+   
+   width: 100%;
+    height: 100%;
+   
+}
+
+.lefteye{
+   position: relative;
+   left: 42.4766%;
+    width: 2%;
+    top: 37.1565%;
+    z-index: 0;
+
+}
+
+.righteye{
+   
+   z-index: 0;
+   position: relative;
+   left: 43.9531%;
+   width: 3%;
+   top: 40.2626%;
+
+
+}
+
+.introtext{
+   position: absolute;
+   top: 35%;
+    left: 42%;
+    font-size: 7rem;
+    width: 35vw;
+    
+    
+}
+
+
+
+.show{
+   display: block;
+}
+
+.hidden{
+   display: none;
+   transition: 0.5s;
+}
+
+.subheading{
+   font-size: 70%;
+    font-family: raleway;
+}
+.heading{
+   font-size: 79%;
+}
+
+
+
+
+/* mediaquery for text size change  */
+@media (min-width: 425px) and (max-width: 768px){
+   .introtext{
+      top:31%
+   }
+.subheading{
+   color: grey;
+   font-size: 40%;
+}
+.heading{
+   font-size: 51%;
+}
+
+}
+
+
+
+
+/* 
+@media(max-width:768px)and(min-width:425px){
+   .introtext{
+      font-size: 4rem;
+      top:31%
+   }
+   .heading{
+      font-size: 51%;
+      
+   }
+   .subheading{
+      font-size: 40%;
+      color: grey;
+
+
+   }
+} */
+@media(max-width:425px){
+   .introtext{
+      font-size: 2rem;
+   }
+}
