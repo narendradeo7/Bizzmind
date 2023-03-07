@@ -10,7 +10,8 @@ const lds = require("lodash");
 
 const path = require("path");
 
-
+// array for gallery section and images 
+const gal =["images/gal/galimg1.jpeg","images/gal/galimg2.jpg","images/gal/galimg3.jpg","images/gal/galimg4.jpg","images/gal/galimg5.jpg","images/gal/galimg6.jpg","images/gal/galimg7.jpg"];
 
 const app = express();
 
@@ -51,7 +52,13 @@ app.use(express.static(static_path));
 
 
 app.get("/",(req,res)=>{
-    res.render("home");
+    res.render("home",{galimg:gal});
+})
+
+// callback for gallery router 
+
+app.get("/gallery",(req,res)=>{
+    res.render("gallery",{galimg:gal});
 })
 
 

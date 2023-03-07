@@ -1,4 +1,5 @@
 
+
 console.log("working of js");
 
 
@@ -57,45 +58,122 @@ function angle(cx,cy,ex,ey){
 }
 
 
+
+
+
+
 // working of scroll for parallax effect 
 
 window.addEventListener("scroll",function(){
     let val= this.window.scrollY
+    
+
+
     let introtext=document.querySelector(".introtext");
     // getting introimg 
     introimg=document.querySelector(".introimg");
     
-
+     
+      
 
     // if we start scrolling then 
     if(val>20){
         
-        introtext.classList.remove("hidden");
-introimg.style.width=(100-(val/3)+5)+"%";
-// o to -26 left shift
-introimg.style.left=(-(val/3)+6)+"%";
+  // stopping bublepic event 
+  document.querySelector(".bubblepic").style.display="none";
+
+  introtext.style.display="block";
+        introimg.style.width=(100-(val/3)+5)+"%";
+      // o to -26 left shift
+       introimg.style.left=(-(val/3)+6)+"%";
 
 
-if(val<140){
-    introtext.style.width=(val/2)+"vw"  
-}
+       if(val<140){
+         introtext.style.width=(val/2)+"vw"
+  
+           }
 
-// intro text left 42 to 72 
-introtext.style.left=(47+(val/2))+"%";
+            // intro text left 42 to 72 
+          introtext.style.left=(47+(val/2))+"%";
 
 
 
-    }
+           }
     else{
-        introtext.classList.add("hidden");
+        introtext.style.display="none";
+        document.querySelector(".bubblepic").style.display="initial";
+
     }
    
 
+
+
+    // scroll to open 
+
+// about section 
+ // titleopen 
+ let titleopen =document.querySelector(".titleopen");
+ let innerText=document.querySelector(".innerText");
+ let abttext=document.querySelector(".abttext");
+
+let abtclippath=(val-150);
+// console.log(abtclippath+"abtclippath");
+
+if(val>185){
+    titleopen.style.clipPath= "circle("+abtclippath +"px at center center)";
+    abttext.style.left=100 - abtclippath/5+"%";
+    innerText.style.left= 100 -abtclippath/5 +"%";
     
-    console.log("scrolly "+ val);
+
+}
+else{
+    titleopen.style.clipPath= "circle("+0 +"px at center center)";
+}
+
+
+
+
+
+
 })
 
 
+// dept card part 
 
 
+
+//   dept card ends 
+
+
+
+
+
+
+
+
+
+// bubble effect for image schow and hide 
+
+for(let i=1;i<=900;i++){
+
+    let box = document.createElement("span");
+    document.querySelector(".bubblepic").appendChild(box);
+
+}
+
+
+
+// animate on scroll 
+
+
+
+// const observer = new IntersectionObserver((entries)=>{
+//     entries.forEach(entry => {
+//         entry.target.classList.toggle("show",entry.isIntersection)
+//       })
+// });
+
+
+// const hiddenElements =document.querySelectorAll('.hidden');
+// hiddenElements.forEach((el)=> observer.observe(el));
 
